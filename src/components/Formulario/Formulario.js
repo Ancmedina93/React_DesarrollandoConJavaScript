@@ -4,7 +4,7 @@ import ListaOpciones from "../ListaOpciones";
 import Boton from "../Bonton";
 import { useState } from "react";
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const [nombre, setNombre] = useState("")
     const [puesto, setPuesto] = useState("")
@@ -33,7 +33,7 @@ const Formulario = () => {
             <CampoTexto titulo = "Nombre" placeholder = "Ingresar Nombre" required={true} valor={nombre} setValor={setNombre} />
             <CampoTexto titulo = "Puesto" placeholder = "Ingresar Puesto" required valor={puesto} setValor={setPuesto} />
             <CampoTexto titulo = "Foto" placeholder = "Ingresar enlace de foto" required valor={foto} setValor={setFoto}/>
-            <ListaOpciones valor={equipo} setEquipo={setEquipo}  />
+            <ListaOpciones valor={equipo} setEquipo={setEquipo} equipos={props.equipos} />
             <Boton texto="Crear"/>
         </form>
     </section>
