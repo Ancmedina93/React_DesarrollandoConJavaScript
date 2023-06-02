@@ -1,7 +1,7 @@
-import "./CampoTexto.css"
+import "./Campo.css"
 import { useState } from "react"
 
-const CampoTexto = (props) => {
+const Campo = (props) => {
 
     const [valor, setValor] = useState("");
     const manejarCambio = (event) =>{
@@ -9,14 +9,20 @@ const CampoTexto = (props) => {
     }
 
     const placeholderModificador = `${props.placeholder}...`
+
+    
+
+    const {type = "text"} = props
+
     return(
-        <div className="campo-texto">
+        <div className={`campo campo-${type}`}>
             <label>{ props.titulo }</label>
             <input 
             placeholder= {placeholderModificador} 
             required={props.required} 
             value={props.valor}
             onChange={manejarCambio}
+            type={type}
              />
         </div>
     )
@@ -24,4 +30,4 @@ const CampoTexto = (props) => {
 
 
 
-export default CampoTexto;
+export default Campo;

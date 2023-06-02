@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-align: center;
     font-size: 32px;
+    position: relative;
 }
 
 .equipo h3{
@@ -13,6 +14,12 @@
     display: inline-block;
     padding-bottom: 8px;
 
+}
+
+.input-color{
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
 
 .colaboradores{
